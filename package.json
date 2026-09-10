@@ -1,0 +1,54 @@
+{
+  "name": "webpack-userscript-template",
+  "description": "Build your UserScript with webpack",
+  "version": "0.0.1",
+  "author": {
+    "name": "Trim21",
+    "email": "trim21me@gmail.com"
+  },
+  "scripts": {
+    "format": "prettier -w ./",
+    "analize": "cross-env npm_config_report=true npm run build",
+    "build": "webpack --config config/webpack.config.prod.cjs",
+    "dev": "webpack --config config/webpack.config.dev.cjs",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trim21/webpack-userscript-template"
+  },
+  "private": true,
+  "dependencies": {
+    "@trim21/gm-fetch": "^0.3.0",
+    "jquery": "^4.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier --ignore-path ./.prettierignore --write "
+    ]
+  },
+  "devDependencies": {
+    "@types/greasemonkey": "^4.0.7",
+    "@types/jquery": "^4.0.1",
+    "@types/node": "^22.17.0",
+    "browserslist": "^4.28.8",
+    "cross-env": "^10.1.0",
+    "css-loader": "^7.1.5",
+    "husky": "^9.1.7",
+    "less": "^4.9.0",
+    "less-loader": "^13.0.0",
+    "lint-staged": "^17.4.1",
+    "prettier": "^3.9.6",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.6.2",
+    "typescript": "^5.9.3",
+    "userscript-metadata-webpack-plugin": "^0.4.2",
+    "webpack": "^5.110.2",
+    "webpack-bundle-analyzer": "^5.3.2",
+    "webpack-cli": "^7.2.3",
+    "webpack-livereload-plugin": "^3.0.2",
+    "webpack-merge": "^6.0.1",
+    "webpack-sources": "^3.5.1"
+  }
+}
