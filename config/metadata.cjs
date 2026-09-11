@@ -1,26 +1,15 @@
-const {
-  author,
-  dependencies,
-  repository,
-  version,
-} = require("../package.json");
+const { author, repository, version } = require("../package.json");
 
 module.exports = {
-  name: {
-    $: "webpack-userscript-template",
-    cn: "中文名",
-    en: "english name",
-  },
-  namespace: "https://trim21.me/",
+  name: "Silence Ads, I'm Talking.",
+  namespace: "https://github.com/ryn-cx/",
   version: version,
   author: author,
   source: repository.url,
-  // 'license': 'MIT',
-  match: ["*://www.example.com/", "*://example.com/*"],
-  require: [
-    `https://cdn.jsdelivr.net/npm/jquery@${dependencies.jquery}/dist/jquery.min.js`,
-  ],
-  grant: ["GM.xmlHttpRequest"],
-  connect: ["httpbin.org"],
+  description:
+    "Real time ad silencer for streaming websites. When an ad is detected the audio is silenced and the video is covered by a slightly transparent modal. When the ad ends the audio is unmuted and the modal is removed.",
+  match: ["*://www.netflix.com/*"],
+  require: [],
+  grant: [],
   "run-at": "document-end",
 };

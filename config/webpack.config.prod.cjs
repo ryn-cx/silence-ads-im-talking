@@ -11,11 +11,6 @@ const cfg = merge(webpackConfig, {
   output: {
     filename: "index.prod.user.js",
   },
-  optimization: {
-    // if you need minimize, you need to config minimizer to keep all comments
-    // to keep userscript meta.
-    minimize: false,
-  },
   cache: {
     type: "filesystem",
     name: "prod",

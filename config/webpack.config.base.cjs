@@ -7,6 +7,8 @@ const webpackConfig = {
     extensions: [".js", ".ts"],
   },
   optimization: {
+    // Minifiers strip comments, and the `// ==UserScript==` header is a
+    // comment block, so minifying would delete the metadata.
     minimize: false,
     moduleIds: "named",
   },
@@ -15,9 +17,6 @@ const webpackConfig = {
     path: path.resolve(__dirname, "../dist"),
   },
   target: "web",
-  externals: {
-    jquery: "$",
-  },
   module: {
     rules: [
       {
@@ -25,14 +24,6 @@ const webpackConfig = {
         use: {
           loader: "ts-loader",
         },
-      },
-      {
-        test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"],
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
       },
     ],
   },
